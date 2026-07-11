@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>RYNIX | Creator Portfolio</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap');
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+scroll-behavior:smooth;
+}
+
+
+body{
+
+background:#000;
+color:white;
+overflow-x:hidden;
+
+}
+
+
+
+/* ===== Animated Black Yellow Background ===== */
+
+
+body::before{
+
+content:"";
+position:fixed;
+
+width:600px;
+height:600px;
+
+background:#ffd000;
+
+filter:blur(200px);
+
+opacity:.25;
+
+top:-200px;
+left:-150px;
+
+animation:move1 8s infinite alternate;
+
+z-index:-1;
+
+}
+
+
+
+body::after{
+
+content:"";
+position:fixed;
+
+width:550px;
+height:550px;
+
+background:#ff9900;
+
+filter:blur(200px);
+
+opacity:.20;
+
+bottom:-200px;
+right:-150px;
+
+animation:move2 10s infinite alternate;
+
+z-index:-1;
+
+}
+
+
+
+@keyframes move1{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(200px,150px);
+}
+
+}
+
+
+
+@keyframes move2{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(-150px,-120px);
+}
+
+}
+
+
+
+
+/* Navbar */
+
+
+nav{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+padding:20px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(0,0,0,.7);
+
+backdrop-filter:blur(20px);
+
+z-index:100;
+
+}
+
+
+.logo{
+
+font-size:35px;
+
+font-weight:900;
+
+letter-spacing:5px;
+
+color:#ffd000;
+
+text-shadow:0 0 20px #ffd000;
+
+}
+
+
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+margin-left:25px;
+
+}
+
+
+
+nav a:hover{
+
+color:#ffd000;
+
+}
+
+
+
+
+/* Hero */
+
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:30px;
+
+}
+
+
+
+.glass{
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,208,0,.3);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+padding:60px;
+
+max-width:900px;
+
+box-shadow:0 0 40px rgba(255,208,0,.15);
+
+animation:floating 5s infinite;
+
+}
+
+
+
+
+@keyframes floating{
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+
+
+
+
+.hero h1{
+
+font-size:100px;
+
+font-weight:900;
+
+background:linear-gradient(90deg,#fff,#ffd000);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+}
+
+
+
+.hero h2{
+
+font-size:30px;
+
+margin:20px;
+
+color:#ffd000;
+
+}
+
+
+
+.hero p{
+
+font-size:18px;
+
+line-height:2;
+
+color:#ddd;
+
+}
+
+
+
+.btn{
+
+display:inline-block;
+
+margin-top:30px;
+
+padding:15px 45px;
+
+background:#ffd000;
+
+color:#000;
+
+font-weight:800;
+
+border-radius:50px;
+
+text-decoration:none;
+
+transition:.4s;
+
+}
+
+
+
+.btn:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 40px #ffd000;
+
+}
+
+
+
+
+
+/* Sections */
+
+
+section{
+
+padding:100px 10%;
+
+}
+
+
+
+.title{
+
+text-align:center;
+
+font-size:45px;
+
+margin-bottom:50px;
+
+color:#ffd000;
+
+}
+
+
+
+
+
+/* Cards */
+
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}
+
+
+
+.card{
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,208,0,.25);
+
+padding:40px;
+
+border-radius:25px;
+
+backdrop-filter:blur(20px);
+
+text-align:center;
+
+transition:.4s;
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 0 35px rgba(255,208,0,.5);
+
+}
+
+
+
+.card h2{
+
+color:#ffd000;
+
+margin-bottom:15px;
+
+}
+
+
+
+/* Stats */
+
+
+.number{
+
+font-size:55px;
+
+font-weight:900;
+
+color:#ffd000;
+
+}
+
+
+
+
+/* Reels */
+
+
+.reels{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}
+
+
+
+.reel{
+
+height:300px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+}
+
+
+
+.reel span{
+
+font-size:70px;
+
+color:#ffd000;
+
+}
+
+
+
+
+/* Contact */
+
+
+.contact{
+
+text-align:center;
+
+}
+
+
+
+
+/* Footer */
+
+
+footer{
+
+background:#050505;
+
+padding:30px;
+
+text-align:center;
+
+color:#aaa;
+
+}
+
+
+
+
+/* Mobile */
+
+
+@media(max-width:700px){
+
+
+nav{
+
+display:none;
+
+}
+
+
+.hero h1{
+
+font-size:55px;
+
+}
+
+
+.glass{
+
+padding:35px;
+
+}
+
+
+.hero p{
+
+font-size:15px;
+
+}
+
+
+.title{
+
+font-size:35px;
+
+}
+
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<div class="logo">
+RYNIX
+</div>
+
+
+<div>
+
+<a href="#about">About</a>
+
+<a href="#reels">Reels</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+
+</nav>
+
+
+
+
+
+<div class="hero">
+
+
+<div class="glass">
+
+
+<h1>
+RYNIX
+</h1>
+
+
+<h2>
+@rynixcore_77
+</h2>
+
+
+<p>
+
+Digital Creator | Instagram Reels Creator
+
+<br><br>
+
+Creating engaging content, building a powerful
+digital identity and growing with creativity.
+
+</p>
+
+
+<a class="btn" href="https://instagram.com/rynixcore_77">
+
+Follow Instagram
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<section id="about">
+
+
+<h1 class="title">
+About RYNIX
+</h1>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+
+<h2>
+🚀 Creator Journey
+</h2>
+
+
+<p>
+
+RYNIX is a creator brand focused on reels,
+creativity, consistency and audience growth.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section>
+
+
+<h1 class="title">
+RYNIX Stats
+</h1>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="number">
+264+
+</div>
+
+<p>
+Followers
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="number">
+100+
+</div>
+
+<p>
+Content Ideas
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<div class="number">
+∞
+</div>
+
+<p>
+Vision
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section id="reels">
+
+
+<h1 class="title">
+Featured Reels
+</h1>
+
+
+<div class="reels">
+
+
+<div class="card reel">
+
+<span>
+▶
+</span>
+
+<h2>
+Growth Reel
+</h2>
+
+</div>
+
+
+
+<div class="card reel">
+
+<span>
+▶
+</span>
+
+<h2>
+Motivation
+</h2>
+
+</div>
+
+
+
+<div class="card reel">
+
+<span>
+▶
+</span>
+
+<h2>
+Creator Life
+</h2>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section>
+
+
+<h1 class="title">
+Services
+</h1>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h2>
+🎬 Reels
+</h2>
+
+<p>
+Creative short-form videos.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+🔥 Growth
+</h2>
+
+<p>
+Building online presence.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+🤝 Collab
+</h2>
+
+<p>
+Brand partnerships.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section id="contact">
+
+
+<h1 class="title">
+Contact
+</h1>
+
+
+<div class="card contact">
+
+
+<h2>
+@rynixcore_77
+</h2>
+
+
+<p>
+Open for collaborations and projects.
+</p>
+
+
+<a class="btn" href="https://instagram.com/rynixcore_77">
+
+Message Me
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<footer>
+
+© 2026 RYNIX | Creator Portfolio
+
+</footer>
+
+
+
+</body>
+
+</html>
